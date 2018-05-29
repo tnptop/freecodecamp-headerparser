@@ -9,8 +9,10 @@ var app = express();
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 app.enable('trust proxy');
 
-app.get('/', (req, res) => {
-  res.redirect('/api/whoami')
+app.use(express.static('public'));
+
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html')
 })
 
 app.get('/api/whoami', (req, res) => {

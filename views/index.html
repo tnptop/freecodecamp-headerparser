@@ -9,51 +9,29 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <header>
-      <h1>
-        A Dream of the Future
-      </h1>
-    </header>
-
-    <main>
-      <p class="bold">Oh hi,</p>
-      
-      <p>Tell me your hopes and dreams:</p>
-      
-      <form>
-        <input name="dream" type="text" maxlength="100" placeholder="Dreams!" aria-labelledby="submit-dream">
-        <button type="submit" id="submit-dream">Submit Dream</button>
-      </form>
-      
-      <section class="dreams">
-        <ul id="dreams"></ul>
-      </section>
-    </main>
-
-    <footer>
-      Made with <a href="https://glitch.com">Glitch</a>!
-    </footer>
-    
-    
-    <!-- import the webpage's client-side javascript file -->
-    <script src="/client.js"></script>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-
-  </body>
+    <head>
+        <title>Header Parser Microservice</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="header">
+                API Basejump: Header Parser Microservice
+            </h1>
+            <blockquote>
+                User stories:
+                <ul>I can get the IP address, language and operating system for my browser.</ul>
+            </blockquote>
+            <h3>Example usage:</h3>
+            <code>https://tnptop-imagesearch.glitch.me/api/whoami</code>
+            <h3>Example output:</h3>
+            <code>
+              {
+                "ipaddress": "173.244.48.7",
+                "language": "en-US",
+                "software": "Macintosh; Intel Mac OS X 10_13_4"
+              }
+            </code>
+        </div>
+    </body>
 </html>
