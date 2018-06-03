@@ -1,29 +1,23 @@
-// server.js
-// where your node app starts
+'use strict'
+const express = require('express')
+const app = express()
 
-// init project
-var express = require('express');
-var app = express();
+app.enable('trust proxy')
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-app.enable('trust proxy');
+app.use(express.static('public'))
 
-app.use(express.static('public'));
-
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html')
+app.get('/', (req, res, next) => {
+  res.sendFile(__dirname + '/views/index.html')
 })
 
 app.get('/api/whoami', (req, res) => {
   res.json({
     ipaddress: req.ip,
-    language: req.acceptsLanguages()[0],
-    software: req.headers['user-agent'].match(/\((.*?)\)/)[1]
-  });
-});
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent']
+  })
+})
 
-// listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+const listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port)
+})
